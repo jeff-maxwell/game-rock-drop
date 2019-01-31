@@ -47,6 +47,9 @@ public class PlayerController : MonoBehaviour
                     rb.transform.position.y - 1, 
                     rb.transform.position.z);
 
+            stone.GetComponent<SpriteRenderer>().sortingLayerName = "Foreground";
+            stone.GetComponent<SpriteRenderer>().sortingOrder = 5;
+
             // Create a new instance of the Stone/Rock object
             Instantiate(stone, rockSpacing);
         }

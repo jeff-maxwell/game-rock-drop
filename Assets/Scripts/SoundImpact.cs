@@ -3,6 +3,8 @@
 public class SoundImpact : MonoBehaviour
 {
     public AudioClip audioClip;
+    public Score scoreScript = new Score();
+
     private AudioSource audioSource;    
 
     void Start()
@@ -13,6 +15,7 @@ public class SoundImpact : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+         scoreScript.IncrementScore();
         audioSource.PlayOneShot(audioClip);
     }
 }

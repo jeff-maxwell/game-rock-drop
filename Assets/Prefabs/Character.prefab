@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7455726215852584565}
   - component: {fileID: 7455726215852584568}
   - component: {fileID: 7455726215852584567}
+  - component: {fileID: 4434556252316210388}
   - component: {fileID: 7455726215852584566}
   m_Layer: 8
   m_Name: ImpactZone
@@ -62,6 +63,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioClip: {fileID: 8300000, guid: c5ddd3bf913d74f7994609b1a7c78e61, type: 3}
+--- !u!114 &4434556252316210388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7455726215852584564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d13885495455c49d2b55ac99a92514bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreText: {fileID: 0}
 --- !u!82 &7455726215852584566
 AudioSource:
   m_ObjectHideFlags: 0

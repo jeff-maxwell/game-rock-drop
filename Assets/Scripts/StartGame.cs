@@ -5,11 +5,10 @@ using UnityEngine;
 public class StartGame : MonoBehaviour
 {
 
-    public Transform character;
+    public GameObject character;
     //public Transform character;
 
-    //public SpriteRenderer spriteRenderer;
-    private AudioClip audioClip;
+    private Random random = new Random();
 
     void Start()
     {
@@ -27,16 +26,38 @@ public class StartGame : MonoBehaviour
 
     public void CreateCharacter()
     {
-        var random = new Random();
+        Sprite sprite;
+        AudioClip audioClip;
 
-        //var sprite = Resources.Load<Sprite>("Sprites/boyzombiehead");
+        var pickSprite = Random.Range(0, 4);
+
+        if (pickSprite == 1)
+        {
+            sprite = Resources.Load<Sprite>("Sprites/boyzombiehead");
+            audioClip = Resources.Load<AudioClip>("Audio/zombieboy");
+        }
+        else if (pickSprite == 2)
+        {
+            sprite = Resources.Load<Sprite>("Sprites/girlzombiehead");
+            audioClip = Resources.Load<AudioClip>("Audio/zombiegirl");
+        }
+        else
+        {
+            sprite = Resources.Load<Sprite>("Sprites/santahead");
+            audioClip = Resources.Load<AudioClip>("Audio/santa");
+        }
         //spriteRenderer = character.GetComponent<SpriteRenderer>();
 
         //spriteRenderer.sprite = sprite;
 
+        character.GetComponent<AudioSource>().clip = audioClip;
+        character.GetComponent<SpriteRenderer>().sprite = sprite;
+        character.GetComponent<SpriteRenderer>().sortingLayerName = "Foreground";
+        character.GetComponent<SpriteRenderer>().sortingOrder = 0;
+
         var x = Random.Range(-8.0f, 8.0f);
         var startPosition = new Vector3(x, -6, 0);
-        character.position = startPosition;
+        character.transform.position = startPosition;
         Instantiate(character);
     }
 }

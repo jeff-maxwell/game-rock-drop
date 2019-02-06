@@ -2,10 +2,9 @@
 
 public class SoundImpact : MonoBehaviour
 {
-    public AudioClip audioClip;
     private Score scoreScript = new Score();
 
-    private AudioSource audioSource;    
+    public AudioSource audioSource;    
 
     void Start()
     {
@@ -15,7 +14,11 @@ public class SoundImpact : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        scoreScript.IncrementScore();
-        audioSource.PlayOneShot(audioClip);
+        print(collision.gameObject.tag);
+        if (collision.gameObject.tag.Equals("Stone") == true)
+        {
+            //scoreScript.IncrementScore();
+            audioSource.Play();
+        }
     }
 }

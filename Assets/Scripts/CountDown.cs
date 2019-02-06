@@ -33,8 +33,11 @@ public class CountDown : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(1);
-            timeLeft--;
+            if (timeLeft >= 0)
+            {
+                yield return new WaitForSeconds(1);
+                timeLeft--;
+            }
         }
     }
 }

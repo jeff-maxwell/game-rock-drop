@@ -11,6 +11,6 @@ public class Score : MonoBehaviour
 
     public void IncrementScore()
     {
-        scoreText.text = $"Score: {++score}";
+        //scoreText.text = $"Score: {++score}";
     }
 }

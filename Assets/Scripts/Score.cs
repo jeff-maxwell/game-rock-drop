@@ -9,8 +9,13 @@ public class Score : MonoBehaviour
 
     private int score = 0;
 
+    private void Start()
+    {
+
+    }
+
     public void IncrementScore()
     {
-        //scoreText.text = $"Score: {++score}";
+        scoreText.text = $"Score: {++score}";
     }
 }

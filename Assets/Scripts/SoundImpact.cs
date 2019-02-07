@@ -2,7 +2,7 @@
 
 public class SoundImpact : MonoBehaviour
 {
-    private Score scoreScript = new Score();
+    public Score scoreScript = new Score();
 
     public AudioSource audioSource;    
 
@@ -11,14 +11,18 @@ public class SoundImpact : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
     }
 
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        print(collision.gameObject.tag);
-        if (collision.gameObject.tag.Equals("Stone") == true)
+        if (collision.gameObject.tag.Equals("Stone"))
         {
-            //scoreScript.IncrementScore();
+            GameObject canvas = GameObject.FindWithTag("MainCanvas");
+
+            scoreScript = canvas.GetComponent<Score>();
+            scoreScript.IncrementScore();
             audioSource.Play();
+
+            collision.gameObject.transform.parent = null;
+            collision.gameObject.tag = "DroppedStone";
         }
     }
 }

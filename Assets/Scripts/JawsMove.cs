@@ -15,7 +15,7 @@ public class JawsMove : MonoBehaviour
     void Update()
     {
         // Get movement value in the Horizontal direction
-        float moveHorizontal = Input.GetAxis("Horizontal");
+        float moveHorizontal = Input.GetAxisRaw("Horizontal");
 
         // Create a vector object with the Horizontal move
         Vector2 movement = new Vector2(moveHorizontal, 0.0f);

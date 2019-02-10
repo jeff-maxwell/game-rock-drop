@@ -5,11 +5,13 @@ using UnityEngine.UI;
 
 public class CountDown : MonoBehaviour
 {
+    // Initialize the time left to 120 seconds
     public int timeLeft = 120;
     public Text timeLeftText;
 
     void Start()
     {
+        // Call the DecreaseTime method to start the countdown
         StartCoroutine("DecreaseTime");
         Time.timeScale = 1;
     }
@@ -17,11 +19,13 @@ public class CountDown : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Display the current time left
         timeLeftText.text = $"Time Left: {FormatTime()}";
     }
 
     private string FormatTime()
     {
+        // Format the clock time
         string minutes = (timeLeft / 60).ToString();
         string seconds = (timeLeft % 60).ToString();
         seconds = seconds.PadLeft(2, '0');
@@ -29,6 +33,7 @@ public class CountDown : MonoBehaviour
         return $"{minutes}:{seconds}";
     }
 
+    // Decreases the time as long as it is > 0
     IEnumerator DecreaseTime()
     {
         while (true)

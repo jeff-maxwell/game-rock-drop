@@ -40,6 +40,7 @@ public class DropStone : MonoBehaviour
             // Create a new instance of the Stone/Rock object
             Instantiate(stone, this.transform);
 
+            // Once the stone is dropped remove the link to the parent
             stone.transform.parent = null;
         }
 

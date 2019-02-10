@@ -6,11 +6,6 @@ public class JawsMove : MonoBehaviour
 {
     // Speed for the movement of the claw left and right
     public float speed = 0.0f;
-    
-    void Start()
-    {
-
-    }
 
     void Update()
     {
